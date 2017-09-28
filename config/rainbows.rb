@@ -4,7 +4,7 @@
 
 Rainbows! do
   use                       :ThreadPool   # concurrency model
-  worker_connections        400
+  worker_connections        399
   keepalive_timeout         0               # disables keepalives
   keepalive_requests        666             # default:100
   client_max_body_size      5 * 1024 * 1024 # 5 megabytes
