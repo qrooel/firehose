@@ -3,7 +3,7 @@
 # configuration documentation for your environment.
 
 Rainbows! do
-  use                       :EventMachine   # concurrency model
+  use                       :ThreadPool   # concurrency model
   worker_connections        400
   keepalive_timeout         0               # disables keepalives
   keepalive_requests        666             # default:100
@@ -12,6 +12,6 @@ Rainbows! do
 end
 
 # the rest of the Unicorn configuration...
-worker_processes [ENV['WORKER_PROCESSES'].to_i, 1].max # Default to 1
+worker_processes [ENV['WORKER_PROCESSES'].to_i, 2].max # Default to 1
 working_directory ENV['WORKING_DIRECTORY'] if ENV['WORKING_DIRECTORY']
 logger Firehose.logger
