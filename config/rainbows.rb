@@ -3,7 +3,7 @@
 # configuration documentation for your environment.
 
 Rainbows! do
-  use                       :ThreadPool   # concurrency model
+  use                       ENV['RAINBOWS_USE'] || :EventMachine   # concurrency model
   worker_connections        399
   keepalive_timeout         0               # disables keepalives
   keepalive_requests        666             # default:100
